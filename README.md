@@ -1,7 +1,7 @@
 SomeShittyFuckinBlog
 ======================
 
-This was stolen, hpefully no one notices
+heres the creds:  mattvh-solar-theme-jekyll 
 
 
 Features
