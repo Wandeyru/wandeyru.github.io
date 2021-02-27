@@ -10,9 +10,13 @@ This is the first in many posts in creating your own unix shell, lets call it se
 This is a sample bullshit program writtenin c which uses recursion, try to guess the output:
 
 {% highlight ruby %}
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/syscall.h>
 void foo(int c) {
     if( c == 1) {
         return 1;
+        printf("At the base case.\n");
     } else {
         return c + foo( c - 1 );
     }
