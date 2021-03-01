@@ -9,7 +9,7 @@ This is the first in many posts in creating your own unix shell, lets call it se
 
 This is a sample bullshit program writtenin c which uses recursion, try to guess the output:
 
-{% highlight ruby %}
+{% highlight c %}
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/syscall.h>
