@@ -10,7 +10,7 @@ Assembly language(asm) is a low-level programming language, where the language i
 
 Here is a sample program that prints hello world in assembly, kindly taken from the internet
 
-{% highlight cpp %}
+{% highlight as %}
 section .data
     hello:     db 'Hello world!',10    
 	helloLen:  equ $-hello            
