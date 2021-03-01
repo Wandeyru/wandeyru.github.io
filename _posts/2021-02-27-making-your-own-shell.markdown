@@ -5,28 +5,27 @@ date:   2021-02-27 12:22:45
 categories: unix programming
 ---
 
-Assembly language(asm) is a low-level programming language, where the language instructions will be more similar to machine code instructions
+This is the first in many posts in creating your own unix shell, lets call it sesh, get it. You might even think its short for session
 
-Here is a sample program that prints hello world in assembly, kindly taken from the internet
+This is a sample bullshit program writtenin c which uses recursion, try to guess the output:
 
-{% highlight cpp %}
-section .data
-	hello:     db 'Hello world!',10    ; 'Hello world!' plus a linefeed character
-	helloLen:  equ $-hello             ; Length of the 'Hello world!' string
+{% highlight asm %}
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/syscall.h>
+void foo(int c) {
+    if( c == 1) {
+        return 1;
+        printf("At the base case.\n");
+    } else {
+        return c + foo( c - 1 );
+    }
+}
 
-section .text
-	global _start
-
-_start:
-	mov eax,4            ; The system call for write (sys_write)
-	mov ebx,1            ; File descriptor 1 - standard output
-	mov ecx,hello        ; Put the offset of hello in ecx
-	mov edx,helloLen     ; helloLen is a constant, so we don't need to say
-	                     ;  mov edx,[helloLen] to get it's actual value
-	int 80h              ; Call the kernel
-	mov eax,1            ; The system call for exit (sys_exit)
-	mov ebx,0            ; Exit with return "code" of 0 (no error)
-	int 80h;
+int main(int argc, char* argv[])
+{
+    foo(30);
+}
 {% endhighlight %}
 
-ask yourself what are those 3 letter words that represent registers doing?
+Is it possible to make this code work in a better way, are there any optimizations?
