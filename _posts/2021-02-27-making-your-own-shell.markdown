@@ -7,7 +7,7 @@ categories: unix programming
 
 Assembly language(asm) is a low-level programming language, where the language instructions will be more similar to machine code instructions
 
--- Here is a sample program that prints hello world in assembly, kindly taken from the internet
+Here is a sample program that prints hello world in assembly, kindly taken from the internet
 
 {% highlight cpp %}
 section .data
