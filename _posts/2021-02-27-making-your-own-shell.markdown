@@ -21,6 +21,11 @@ void foo(int c) {
         return c + foo( c - 1 );
     }
 }
+
+int main(int argc, char* argv[])
+{
+    foo(30);
+}
 {% endhighlight %}
 
 Is it possible to refactor this code so it does something very similar, what is the cost of running this program?.
